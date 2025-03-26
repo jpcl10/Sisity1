@@ -1,0 +1,282 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+h2 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+form {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    max-width: 850px;
+    margin: 0 auto 40px;
+}
+
+.section {
+    margin-bottom: 25px;
+    border: 1px solid #e1e8ed;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.section-header {
+    background-color: #f8f9fa;
+    color: #2c3e50;
+    font-weight: 600;
+    padding: 12px 15px;
+    border-bottom: 1px solid #e1e8ed;
+    font-size: 1.1em;
+}
+
+.section-content {
+    padding: 15px;
+    background-color: #fff;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 250px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.form-group-small {
+    flex: 0 0 auto;
+    min-width: 150px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 14px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+    outline: none;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 6px;
+    cursor: pointer;
+}
+
+button {
+    background-color: #4a90e2;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    display: block;
+    margin: 30px auto 10px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #3a7bc8;
+}
+
+.proc-secundario {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.checklist {
+    margin: 8px 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.checklist > div {
+    margin: 5px 0;
+    min-width: 200px;
+    display: flex;
+    align-items: center;
+    border: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.checklist label {
+    display: inline;
+    margin-left: 6px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.exames-previos {
+    margin: 12px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.exames-previos label {
+    display: inline;
+    margin-right: 15px;
+    margin-left: 6px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.score-display {
+    background-color: #e8f4fd;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #c5e1f9;
+    margin-top: 15px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.score-display p {
+    margin: 8px 0;
+    font-weight: 600;
+}
+
+#score_total {
+    color: #2c3e50;
+    font-size: 18px;
+}
+
+#score_classificacao {
+    color: #e74c3c;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.form-row {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.form-row label {
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.form-row input[type="text"] {
+    width: auto;
+    margin-right: 15px;
+}
+
+.form-row input[type="radio"],
+.form-row input[type="checkbox"] {
+    margin-right: 6px;
+    margin-left: 2px;
+    transform: scale(1.1);
+}
+
+.field-number {
+    font-weight: bold;
+    color: #4a90e2;
+    margin-right: 4px;
+}
+
+.note {
+    font-size: 0.85em;
+    color: #666;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+/* Indicador de carregamento */
+.loading-indicator {
+    text-align: center;
+    margin: 15px auto;
+    color: #4a90e2;
+    font-weight: 600;
+}
+
+/* Efeitos de hover e foco */
+.section:hover {
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.2);
+}
+
+.checklist > div:hover {
+    background-color: #f8f9fa;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.section {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    form {
+        padding: 15px;
+        margin: 0 10px 20px;
+    }
+    
+    .form-group,
+    .form-group-small {
+        min-width: 100%;
+        margin-right: 0;
+    }
+    
+    .checklist > div {
+        min-width: 100%;
+    }
+    
+    h2 {
+        font-size: 1.4em;
+    }
+    
+    button {
+        width: 100%;
+    }
+}

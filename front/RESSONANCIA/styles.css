@@ -1,0 +1,136 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    background-color: #f5f5f5;
+}
+
+h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+form {
+    background: white;
+    padding: 0;
+    border: 1px solid #ccc;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Seções do formulário */
+.section {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+}
+
+.section-header {
+    background-color: #333;
+    color: white;
+    padding: 8px 10px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.section-content {
+    padding: 15px;
+}
+
+/* Layout em linhas e colunas */
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.form-group {
+    flex: 1 0 100%;
+    margin-bottom: 10px;
+}
+
+.form-group-small {
+    flex: 1 0 30%;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.form-group-small:last-child {
+    margin-right: 0;
+}
+
+/* Estilos para os campos */
+div {
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: white;
+    margin: 0;
+    padding: 8px 10px;
+    background-color: #333;
+    font-size: 0.9rem;
+}
+
+label {
+    display: block;
+    margin: 8px 0 4px;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin: 20px auto 0;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.field-number {
+    font-weight: bold;
+}
+
+/* Estilos para checkbox */
+.checklist {
+    margin-top: 10px;
+}
+
+.checklist label {
+    display: inline;
+    margin-left: 5px;
+    font-weight: normal;
+}
+
+/* Estilos para parágrafos nas seções */
+.form-group p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}

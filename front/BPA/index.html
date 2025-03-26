@@ -1,0 +1,948 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le styles -->
+
+    <meta name="author" content="NetPix | Agência Web [netpix.com.br]">
+    <meta name="description" content="LAUDO PARA SOLICITAÇÃO/AUTORIZAÇÃO DE PROCEDIMENTO AMBULATORIAL Cardionuclear">
+    <meta name="keywords" content="LAUDO PARA SOLICITAÇÃO/AUTORIZAÇÃO DE PROCEDIMENTO AMBULATORIAL Cardionuclear">
+    <meta name="robots" content="index,follow">
+    <meta name="revised" content="30/04/2013">
+    <meta name="contact" content="agencia@netpix.com.br">
+    <meta name="copyright" content="Cardionuclear [www.cardionuclear.net.br]">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!-- <link href="//www.cardionuclear.net.br/cadastro/assets/css/bootstrap-responsive.min.css" rel="stylesheet" /> -->
+
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/jquery-ui-1.10.3.custom.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <title>LAUDO PARA SOLICITAÇÃO/AUTORIZAÇÃO DE PROCEDIMENTO AMBULATORIAL</title>
+</head>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Seleciona o formulário
+        const form = document.getElementById('form-laudo-sus');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Impede o comportamento padrão de submissão do formulário
+
+            // Obtém os dados do formulário
+            const formData = new FormData(form);
+
+            // Converte os dados do formulário para JSON
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            // Envia os dados para o endpoint /register da API no localhost:3000
+            fetch('http://localhost:3000/register/BPA', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+                .then(response => response.json()) // Converte a resposta em JSON
+                .then(responseData => {
+                    console.log('Resposta da API:', responseData);
+                    // Aqui você pode tratar a resposta da API, como mostrar uma mensagem de sucesso
+                })
+                .catch(error => {
+                    console.error('Erro ao enviar os dados:', error);
+                });
+        });
+    });
+</script>
+
+<body>
+
+    <div class="container">
+
+        <div class="logo">
+            <a href="/">
+                <img class="bdnone" src="">
+            </a>
+        </div>
+
+        <form action="javascript:void(0);" method="post" class="form-inline" id="form-laudo-sus">
+
+            <h4>
+                LAUDO PARA SOLICITAÇÃO/AUTORIZAÇÃO DE PROCEDIMENTO AMBULATORIAL
+            </h4>
+
+            <div id="summary"></div>
+
+            <fieldset>
+                <legend>
+                    IDENTIFICAÇÃO DO ESTABELECIMENTO DE SAÚDE (SOLICITANTE)
+                </legend>
+
+                <div class="row">
+                    <div class="control-group span10">
+                        <label class="control-label not_required" for="estab_solic_nome">
+                            1 - NOME DO ESTABELECIMENTO DE SAÚDE SOLICITANTE
+                        </label>
+                        <div class="controls">
+                            <input class="span10 not_required" type="text" id="estab_solic_nome" name="estab_solic_nome"
+                                value="">
+                        </div>
+                    </div>
+
+                    <div class="control-group span2">
+                        <label class="control-label not_required" for="estab_solic_cnes">
+                            2 - CNES
+                        </label>
+                        <div class="controls">
+                            <input class="span2 not_required digits" type="text" id="estab_solic_cnes"
+                                name="estab_solic_cnes" value="">
+                        </div>
+                    </div>
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>
+                    IDENTIFICAÇÃO DO PACIENTE
+                </legend>
+
+                <div class="row">
+                    <div class="control-group span10">
+                        <label class="control-label not_required" for="paciente_nome">
+                            3 - NOME DO PACIENTE
+                        </label>
+                        <div class="controls">
+                            <input class="span10 not_required" type="text" id="paciente_nome" name="paciente_nome"
+                                value="">
+                        </div>
+                    </div>
+
+                    <div class="control-group span2">
+                        <label class="control-label" for="paciente_num_prontuario">
+                            4 - Nº DO PRONTUÁRIO
+                        </label>
+                        <div class="controls">
+                            <input class="span2 digits" type="text" id="paciente_num_prontuario"
+                                name="paciente_num_prontuario" value="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="control-group span6">
+                        <label class="control-label not_required" for="paciente_num_cns">
+                            5 - CARTÃO NACIONAL DE SAÚDE (CNS)
+                        </label>
+                        <div class="controls">
+                            <input class="span6 not_required digits" type="text" id="paciente_num_cns"
+                                name="paciente_num_cns" value="">
+                        </div>
+                    </div>
+
+                    <div class="control-group span3">
+                        <label class="control-label not_required" for="paciente_dt_nasc">
+                            6 - DATA DE NASCIMENTO
+                        </label>
+                        <div class="controls">
+                            <input class="span2 dateBR not_required" type="text" id="paciente_dt_nasc"
+                                name="paciente_dt_nasc" value="">
+                        </div>
+                    </div>
+
+                    <div class="control-group span3">
+                        <label class="control-label not_required" for="paciente_sexo">
+                            7 - SEXO
+                        </label>
+                        <div class="controls">
+                            <label class="radio">
+                                <input class="not_required" type="radio" name="paciente_sexo" id="paciente_sexo_m"
+                                    value="M">
+                                Masc.
+                            </label>
+                            <label class="radio">
+                                <input class="not_required" type="radio" name="paciente_sexo" id="paciente_sexo_f"
+                                    value="F">
+                                Fem.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="control-group span8">
+                        <label class="control-label not_required" for="paciente_nome_mae_ou_resp">
+                            8 - NOME DA MÃE OU RESPONSÁVEL
+                        </label>
+                        <div class="controls">
+                            <input class="span8 not_required" type="text" id="paciente_nome_mae_ou_resp"
+                                name="paciente_nome_mae_ou_resp" value="">
+                        </div>
+                    </div>
+
+                    <div class="control-group span4">
+                        <label class="control-label" for="paciente_tel_contato">
+                            9 - TELEFONE DE CONTATO
+                        </label>
+                        <div class="controls">
+                            <input class="span4 tel" type="text" id="paciente_tel_contato" name="paciente_tel_contato"
+                                value="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group" style="display:block">
+                    <label class="control-label not_required" for="paciente_endereco">
+                        10 - ENDEREÇO (RUA, Nº, BAIRRO)
+                    </label>
+                    <div class="controls">
+                        <input class="input-block-level not_required" type="text" id="paciente_endereco"
+                            name="paciente_endereco" value="">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="control-group span7">
+                        <label class="control-label" for="paciente_munic_res">
+                            11 - MUNICÍPIO RESIDÊNCIA
+                        </label>
+                        <div class="controls">
+                            <input class="span7" type="text" id="paciente_munic_res" name="paciente_munic_res" value="">
+                        </div>
+                    </div>
+
+                    <div class="control-group span2">
+                        <label class="control-label" for="paciente_munic_cod_ibge">
+                            12 - CÓD IBGE MUNICÍPIO
+                        </label>
+                        <div class="controls">
+                            <input class="span2 digits" type="text" id="paciente_munic_cod_ibge"
+                                name="paciente_munic_cod_ibge" value="">
+                        </div>
+                    </div>
+
+                    <div class="control-group span1">
+                        <label class="control-label" for="paciente_uf">
+                            13 - UF
+                        </label>
+                        <div class="controls">
+                            <input class="span1" type="text" id="paciente_uf" name="paciente_uf" value="">
+                        </div>
+                    </div>
+
+                    <div class="control-group span2">
+                        <label class="control-label" for="paciente_cep">
+                            14 - CEP
+                        </label>
+                        <div class="controls">
+                            <input class="span2 cep" type="text" id="paciente_cep" name="paciente_cep" value="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="control-group span6">
+                        <label class="control-label not_required" for="paciente_prioridade_clinica">
+                            15 - CLASSIFICAÇÃO DE PRIORIDADE CLÍNICA
+                        </label>
+                        <div class="controls">
+                            <label class="radio inline">
+                                <input class="not_required" type="radio" name="paciente_prioridade_clinica"
+                                    id="paciente_prioridade_clinica_1" value="1">
+                                Prioridade 1: Muito urgente
+                            </label>
+                            <label class="radio inline">
+                                <input class="not_required" type="radio" name="paciente_prioridade_clinica"
+                                    id="paciente_prioridade_clinica_2" value="2">
+                                Prioridade 2: Alta urgência
+                            </label>
+                            <label class="radio inline">
+                                <input class="not_required" type="radio" name="paciente_prioridade_clinica"
+                                    id="paciente_prioridade_clinica_3" value="3">
+                                Prioridade 3: Moderada
+                            </label>
+                            <label class="radio inline">
+                                <input class="not_required" type="radio" name="paciente_prioridade_clinica"
+                                    id="paciente_prioridade_clinica_4" value="4">
+                                Prioridade 4: Baixa urgência
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="control-group span6">
+                        <label class="control-label not_required" for="paciente_gestacao_puerperio">
+                            16 - GESTAÇÃO OU PUERPÉRIO
+                        </label>
+                        <div class="controls">
+                            <label class="radio inline">
+                                <input class="not_required" type="radio" name="paciente_gestacao_puerperio"
+                                    id="paciente_gestacao_puerperio_sim" value="Sim">
+                                Sim
+                            </label>
+                            <label class="radio inline">
+                                <input class="not_required" type="radio" name="paciente_gestacao_puerperio"
+                                    id="paciente_gestacao_puerperio_nao" value="Não">
+                                Não
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="control-group span4">
+                        <label class="control-label not_required" for="paciente_comorbidades">
+                            17 - COMORBIDADES
+                        </label>
+                        <div class="controls">
+                            <label class="radio inline">
+                                <input class="not_required" type="radio" name="paciente_comorbidades"
+                                    id="paciente_comorbidades_0" value="0">
+                                0
+                            </label>
+                            <label class="radio inline">
+                                <input class="not_required" type="radio" name="paciente_comorbidades"
+                                    id="paciente_comorbidades_1" value="1">
+                                1
+                            </label>
+                            <label class="radio inline">
+                                <input class="not_required" type="radio" name="paciente_comorbidades"
+                                    id="paciente_comorbidades_2" value="2">
+                                2
+                            </label>
+                            <label class="radio inline">
+                                <input class="not_required" type="radio" name="paciente_comorbidades"
+                                    id="paciente_comorbidades_3" value="3 ou mais">
+                                3 ou mais
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="control-group span4">
+                        <label class="control-label not_required" for="paciente_limitacao_funcional">
+                            18 - LIMITAÇÃO FUNCIONAL
+                        </label>
+                        <div class="controls">
+                            <select class="span4 not_required" id="paciente_limitacao_funcional"
+                                name="paciente_limitacao_funcional">
+                                <option value="">Selecione</option>
+                                <option value="Nenhuma">Nenhuma</option>
+                                <option value="Leve">Leve</option>
+                                <option value="Moderada">Moderada</option>
+                                <option value="Severa">Severa</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="control-group span4">
+                        <label class="control-label not_required" for="paciente_historico_internacao">
+                            19 - HISTÓRICO RECENTE DE INTERNAÇÃO/EMERGÊNCIA
+                        </label>
+                        <div class="controls">
+                            <label class="radio inline">
+                                <input class="not_required" type="radio" name="paciente_historico_internacao"
+                                    id="paciente_historico_internacao_sim" value="Sim">
+                                Sim
+                            </label>
+                            <label class="radio inline">
+                                <input class="not_required" type="radio" name="paciente_historico_internacao"
+                                    id="paciente_historico_internacao_nao" value="Não">
+                                Não
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>
+                    PROCEDIMENTO SOLICITADO
+                </legend>
+
+                <div class="row">
+                    <div class="control-group span3">
+                        <label class="control-label not_required" for="procedimento_0_cod">
+                            15 - CÓD DO PROCEDIMENTO PRINCIPAL
+                        </label>
+                        <div class="controls">
+                            <input class="span3 not_required digits cod_proc" type="text" id="procedimento_0_cod"
+                                name="procedimento_0_cod" value="">
+                        </div>
+                    </div>
+
+                    <div class="control-group span8">
+                        <label class="control-label not_required" for="procedimento_0_nome">
+                            16 - NOME DO PROCEDIMENTO PRINCIPAL
+                        </label>
+                        <div class="controls">
+                            <input maxlength="45" class="span8 not_required desc_proc" type="text"
+                                id="procedimento_0_nome" name="procedimento_0_nome" value="">
+                        </div>
+                    </div>
+
+                    <div class="control-group span1">
+                        <label class="control-label not_required" for="procedimento_0_qtde">
+                            17 - QTDE
+                        </label>
+                        <div class="controls">
+                            <input class="span1 not_required digits" type="text" id="procedimento_0_qtde"
+                                name="procedimento_0_qtde" value="">
+                        </div>
+                    </div>
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>
+                    PROCEDIMENTO(S) SECUNDÁRIO(S)
+                </legend>
+
+                <div class="row">
+                    <div class="control-group span3">
+                        <label class="control-label" for="procedimento_1_cod">
+                            18 - CÓD DO PROCEDIMENTO SECUNDÁRIO
+                        </label>
+                        <div class="controls">
+                            <input class="span3 digits cod_proc" type="text" id="procedimento_1_cod"
+                                name="procedimento_1_cod" value="">
+                        </div>
+                    </div>
+
+                    <div class="control-group span8">
+                        <label class="control-label" for="procedimento_1_nome">
+                            19 - NOME DO PROCEDIMENTO SECUNDÁRIO
+                        </label>
+                        <div class="controls">
+                            <input maxlength="45" class="span8 desc_proc" type="text" id="procedimento_1_nome"
+                                name="procedimento_1_nome" value="">
+                        </div>
+                    </div>
+
+                    <div class="control-group span1">
+                        <label class="control-label" for="procedimento_1_qtde">
+                            20 - QTDE
+                        </label>
+                        <div class="controls">
+                            <input class="span1 digits" type="text" id="procedimento_1_qtde" name="procedimento_1_qtde"
+                                value="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="control-group span3">
+                        <label class="control-label" for="procedimento_2_cod">
+                            21 - CÓD DO PROCEDIMENTO SECUNDÁRIO
+                        </label>
+                        <div class="controls">
+                            <input class="span3 digits cod_proc" type="text" id="procedimento_2_cod"
+                                name="procedimento_2_cod" value="">
+                        </div>
+                    </div>
+
+                    <div class="control-group span8">
+                        <label class="control-label" for="procedimento_2_nome">
+                            22 - NOME DO PROCEDIMENTO SECUNDÁRIO
+                        </label>
+                        <div class="controls">
+                            <input maxlength="45" class="span8 desc_proc" type="text" id="procedimento_2_nome"
+                                name="procedimento_2_nome" value="">
+                        </div>
+                    </div>
+
+                    <div class="control-group span1">
+                        <label class="control-label" for="procedimento_2_qtde">
+                            23 - QTDE
+                        </label>
+                        <div class="controls">
+                            <input class="span1 digits" type="text" id="procedimento_2_qtde" name="procedimento_2_qtde"
+                                value="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="control-group span3">
+                        <label class="control-label" for="procedimento_3_cod">
+                            24 - CÓD DO PROCEDIMENTO SECUNDÁRIO
+                        </label>
+                        <div class="controls">
+                            <input class="span3 digits cod_proc" type="text" id="procedimento_3_cod"
+                                name="procedimento_3_cod" value="">
+                        </div>
+                    </div>
+
+                    <div class="control-group span8">
+                        <label class="control-label" for="procedimento_3_nome">
+                            25 - NOME DO PROCEDIMENTO SECUNDÁRIO
+                        </label>
+                        <div class="controls">
+                            <input maxlength="45" class="span8 desc_proc" type="text" id="procedimento_3_nome"
+                                name="procedimento_3_nome" value="">
+                        </div>
+                    </div>
+
+                    <div class="control-group span1">
+                        <label class="control-label" for="procedimento_3_qtde">
+                            26 - QTDE
+                        </label>
+                        <div class="controls">
+                            <input class="span1 digits" type="text" id="procedimento_3_qtde" name="procedimento_3_qtde"
+                                value="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="control-group span3">
+                        <label class="control-label" for="procedimento_4_cod">
+                            27 - CÓD DO PROCEDIMENTO SECUNDÁRIO
+                        </label>
+                        <div class="controls">
+                            <input class="span3 digits cod_proc" type="text" id="procedimento_4_cod"
+                                name="procedimento_4_cod" value="">
+                        </div>
+                    </div>
+
+                    <div class="control-group span8">
+                        <label class="control-label" for="procedimento_4_nome">
+                            28 - NOME DO PROCEDIMENTO SECUNDÁRIO
+                        </label>
+                        <div class="controls">
+                            <input maxlength="45" class="span8 desc_proc" type="text" id="procedimento_4_nome"
+                                name="procedimento_4_nome" value="">
+                        </div>
+                    </div>
+
+                    <div class="control-group span1">
+                        <label class="control-label" for="procedimento_4_qtde">
+                            29 - QTDE
+                        </label>
+                        <div class="controls">
+                            <input class="span1 digits" type="text" id="procedimento_4_qtde" name="procedimento_4_qtde"
+                                value="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="control-group span3">
+                        <label class="control-label" for="procedimento_5_cod">
+                            30 - CÓD DO PROCEDIMENTO SECUNDÁRIO
+                        </label>
+                        <div class="controls">
+                            <input class="span3 digits cod_proc" type="text" id="procedimento_5_cod"
+                                name="procedimento_5_cod" value="">
+                        </div>
+                    </div>
+
+                    <div class="control-group span8">
+                        <label class="control-label" for="procedimento_5_nome">
+                            31 - NOME DO PROCEDIMENTO SECUNDÁRIO
+                        </label>
+                        <div class="controls">
+                            <input maxlength="45" class="span8 desc_proc" type="text" id="procedimento_5_nome"
+                                name="procedimento_5_nome" value="">
+                        </div>
+                    </div>
+
+                    <div class="control-group span1">
+                        <label class="control-label" for="procedimento_5_qtde">
+                            32 - QTDE
+                        </label>
+                        <div class="controls">
+                            <input class="span1 digits" type="text" id="procedimento_5_qtde" name="procedimento_5_qtde"
+                                value="">
+                        </div>
+                    </div>
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>
+                    JUSTIFICATIVA DO(S) PROCEDIMENTO(S) SOLICITADO(S)
+                </legend>
+
+                <div class="row">
+                    <div class="control-group span6">
+                        <label class="control-label not_required" for="justificativa_desc_diagnostico">
+                            33 - DESCRIÇÃO DO DIGANÓSTICO
+                        </label>
+                        <div class="controls">
+                            <input class="span6 not_required" type="text" id="justificativa_desc_diagnostico"
+                                name="justificativa_desc_diagnostico" value="">
+                        </div>
+                    </div>
+
+                    <div class="control-group span2">
+                        <label class="control-label not_required" for="justificativa_cid10_princ">
+                            34 - CID10 PRINCIPAL
+                        </label>
+                        <div class="controls">
+                            <input class="span2 not_required cid10" type="text" id="justificativa_cid10_princ"
+                                name="justificativa_cid10_princ" value="">
+                        </div>
+                    </div>
+
+                    <div class="control-group span2">
+                        <label class="control-label" for="justificativa_cid10_sec">
+                            35 - CID10 SECUNDÁRIO
+                        </label>
+                        <div class="controls">
+                            <input class="span2 cid10" type="text" id="justificativa_cid10_sec"
+                                name="justificativa_cid10_sec" value="">
+                        </div>
+                    </div>
+
+                    <div class="control-group span2">
+                        <label class="control-label" for="justificativa_cid10_causas_assoc">
+                            36 - CID10 CAUSAS ASSOCIADAS
+                        </label>
+                        <div class="controls">
+                            <input class="span2 cid10" type="text" id="justificativa_cid10_causas_assoc"
+                                name="justificativa_cid10_causas_assoc" value="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="control-group span12">
+                        <label class="control-label" for="justificativa_obs">
+                            37 - OBSERVAÇÕES
+                        </label>
+                        <div class="controls">
+                            <textarea class="span12" type="text" id="justificativa_obs" name="justificativa_obs"
+                                rows="6"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>
+                    SOLICITAÇÃO
+                </legend>
+
+                <div class="row">
+                    <div class="control-group span4">
+                        <label class="control-label not_required" for="solicitacao_nome_solic">
+                            38 - NOME DO PROFISSIONAL SOLICITANTE
+                        </label>
+                        <div class="controls">
+                            <input class="span4 not_required" type="text" id="solicitacao_nome_solic"
+                                name="solicitacao_nome_solic" value="">
+                        </div>
+                    </div>
+
+                    <div class="control-group span3">
+                        <label class="control-label not_required" for="solicitacao_data">
+                            39 - DATA DA SOLICITAÇÃO
+                        </label>
+                        <div class="controls">
+                            <input class="span2 dateBR not_required" type="text" id="solicitacao_data"
+                                name="solicitacao_data" value="">
+                        </div>
+                    </div>
+
+                    <div class="control-group span2">
+                        <label class="control-label not_required" for="solicitacao_doc_solic">
+                            40 - DOCUMENTO
+                        </label>
+                        <div class="controls">
+                            <label class="radio">
+                                <input class="not_required" type="radio" name="solicitacao_doc_solic"
+                                    id="solicitacao_doc_solic_cns" value="CNS">
+                                CNS
+                            </label>
+                            <label class="radio">
+                                <input class="not_required" type="radio" name="solicitacao_doc_solic"
+                                    id="solicitacao_doc_solic_cpf" value="CPF">
+                                CPF
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="control-group span3">
+                        <label class="control-label not_required" for="solicitacao_num_doc">
+                            41 - Nº DOCUMENTO (CNS/CPF) DO PROFISSIONAL SOLICITANTE
+                        </label>
+                        <div class="controls">
+                            <input class="span3 not_required" type="text" id="solicitacao_num_doc"
+                                name="solicitacao_num_doc" value="">
+                        </div>
+                    </div>
+
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>
+                    IDENTIFICAÇÃO DO ESTABELECIMENTO DE SAÚDE (EXECUTANTE)
+                </legend>
+
+                <div class="row">
+                    <div class="control-group span10">
+                        <label class="control-label not_required" for="estab_exec_nome">
+                            51 - NOME FANTASIA DO ESTABELECIMENTO DE SAÚDE EXECUTANTE
+                        </label>
+                        <div class="controls">
+                            <input class="span10 not_required" type="text" id="estab_exec_nome" name="estab_exec_nome"
+                                value="">
+                        </div>
+                    </div>
+
+                    <div class="control-group span2">
+                        <label class="control-label not_required" for="estab_exec_cnes">
+                            52 - CNES
+                        </label>
+                        <div class="controls">
+                            <input class="span2 not_required digits" type="text" id="estab_exec_cnes"
+                                name="estab_exec_cnes" value="">
+                        </div>
+                    </div>
+                </div>
+
+            </fieldset>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary enviar">Continuar</button>
+                <button type="button" class="btn">Cancelar</button>
+            </div>
+
+        </form>
+    </div>
+
+    <div id="confirm-modal" class="modal hide fade">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3>Confirme seus dados</h3>
+        </div>
+        <div class="modal-body">
+            <p>
+                <!-- One fine body… -->
+            </p>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="btn" data-dismiss="modal">Corrigir dados</a>
+            <button class="btn btn-primary" id="confirm-and-send">Prosseguir</button>
+        </div>
+    </div>
+
+    <div id="success-modal" class="modal hide fade">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3>Obrigado</h3>
+        </div>
+        <div class="modal-body">
+            <p>
+                O Laudo foi gerado. <br>
+                <span id="laudo-link"></span>
+            </p>
+            <p>
+                <em>Equipe Cardionuclear</em>
+            </p>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="btn btn-primary" data-dismiss="modal">OK</a>
+        </div>
+    </div>
+    <!-- JavaScripts -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="scripts/jquery.masked-input.js"></script>
+    <script type="text/javascript" src="scripts/xdate.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+    <script type="text/javascript" src="scripts/jquery-ui.datepicker_pt_BR.js"></script>
+    <script type="text/javascript" src="//www.cardionuclear.net.br/cadastro/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="//www.cardionuclear.net.br/cadastro/assets/js/jquery.validate.js"></script>
+    <script type="text/javascript" src="scripts/validation/messages_pt_BR.js"></script>
+    <script type="text/javascript" src="//www.cardionuclear.net.br/cadastro/assets/js/modernizr.js"></script>
+    <script type="text/javascript" src="//www.cardionuclear.net.br/cadastro/assets/js/placeholder.js"></script>
+    <script type="text/javascript" src="scripts/jquery.feedbackbar.min.js"></script>
+    <script type="text/javascript" src="scripts/custom.js"></script>
+    <!-- Usando apenas a integração com Excel -->
+    <script type="text/javascript" src="scripts/google-sheets-excel-integration.js"></script>
+    <!-- /JavaScripts -->
+</body>
+
+</html>
+
+
+
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Dados de exemplo para autopreenchimento (pode ser substituído por dados reais)
+        const dadosExemplo = {
+            // Estabelecimento Solicitante
+            estab_solic_nome: "Hospital Municipal de Exemplo",
+            estab_solic_cnes: "1234567",
+            
+            // Paciente
+            paciente_nome: "Fulano da Silva",
+            paciente_num_prontuario: "789012",
+            paciente_num_cns: "123456789012345",
+            paciente_dt_nasc: "15/05/1980",
+            paciente_sexo: "M",
+            paciente_nome_mae_ou_resp: "Ciclana da Silva",
+            paciente_tel_contato: "(21) 98765-4321",
+            paciente_endereco: "Rua Exemplo, 123 - Centro",
+            paciente_munic_res: "Rio de Janeiro",
+            paciente_munic_cod_ibge: "3304557",
+            paciente_uf: "RJ",
+            paciente_cep: "20000-000",
+            paciente_prioridade_clinica: "2",
+            paciente_gestacao_puerperio: "Não",
+            paciente_comorbidades: "1",
+            paciente_limitacao_funcional: "Leve",
+            paciente_historico_internacao: "Sim",
+            
+            // Procedimentos
+            procedimento_0_cod: "123456",
+            procedimento_0_nome: "Ressonância Magnética de Crânio",
+            procedimento_0_qtde: "1",
+            
+            // Justificativa
+            justificativa_desc_diagnostico: "Cefaleia persistente com suspeita de neoplasia",
+            justificativa_cid10_princ: "R51",
+            justificativa_cid10_sec: "G93.4",
+            justificativa_cid10_causas_assoc: "",
+            justificativa_obs: "Paciente com histórico familiar de neoplasia cerebral",
+            
+            // Solicitação
+            solicitacao_nome_solic: "Dr. João Médico",
+            solicitacao_data: new Date().toLocaleDateString('pt-BR'),
+            solicitacao_doc_solic: "CNS",
+            solicitacao_num_doc: "987654321098765",
+            
+            // Estabelecimento Executante
+            estab_exec_nome: "Cardionuclear Diagnósticos",
+            estab_exec_cnes: "7654321"
+        };
+    
+        // Função para preencher campos do formulário
+        function preencherFormulario(dados) {
+            // Preencher campos de texto
+            for (const [id, valor] of Object.entries(dados)) {
+                const elemento = document.getElementById(id);
+                if (elemento) {
+                    if (elemento.type === 'radio' || elemento.type === 'checkbox') {
+                        // Para radios/checkboxes
+                        const elementos = document.querySelectorAll(`[name="${id}"]`);
+                        elementos.forEach(el => {
+                            if (el.value === valor) {
+                                el.checked = true;
+                            }
+                        });
+                    } else if (elemento.tagName === 'SELECT') {
+                        // Para selects
+                        elemento.value = valor;
+                    } else {
+                        // Para inputs normais
+                        elemento.value = valor;
+                    }
+                }
+            }
+        }
+    
+        // Botão para autopreenchimento (pode ser removido em produção)
+        const btnAutopreenchimento = document.createElement('button');
+        btnAutopreenchimento.textContent = 'Autopreencher Formulário';
+        btnAutopreenchimento.className = 'btn btn-info';
+        btnAutopreenchimento.style.margin = '10px';
+        btnAutopreenchimento.onclick = function() {
+            if (confirm('Deseja preencher o formulário com dados de exemplo?')) {
+                preencherFormulario(dadosExemplo);
+            }
+        };
+        
+        // Adiciona o botão antes dos botões de ação
+        const formActions = document.querySelector('.form-actions');
+        if (formActions) {
+            formActions.insertBefore(btnAutopreenchimento, formActions.firstChild);
+        }
+    
+        // Função para salvar dados no localStorage
+        function salvarDados() {
+            const dadosFormulario = {};
+            
+            // Coletar todos os campos do formulário
+            const elementos = document.querySelectorAll('#form-laudo-sus input, #form-laudo-sus select, #form-laudo-sus textarea');
+            
+            elementos.forEach(elemento => {
+                if (elemento.name) {
+                    if (elemento.type === 'radio' || elemento.type === 'checkbox') {
+                        if (elemento.checked) {
+                            dadosFormulario[elemento.name] = elemento.value;
+                        }
+                    } else {
+                        dadosFormulario[elemento.name] = elemento.value;
+                    }
+                }
+            });
+            
+            localStorage.setItem('dadosLaudoSUS', JSON.stringify(dadosFormulario));
+        }
+    
+        // Função para carregar dados do localStorage
+        function carregarDados() {
+            const dadosSalvos = localStorage.getItem('dadosLaudoSUS');
+            if (dadosSalvos) {
+                if (confirm('Dados salvos encontrados. Deseja carregá-los?')) {
+                    preencherFormulario(JSON.parse(dadosSalvos));
+                }
+            }
+        }
+    
+        // Salvar dados ao sair da página ou submeter o formulário
+        window.addEventListener('beforeunload', salvarDados);
+        document.getElementById('form-laudo-sus').addEventListener('submit', salvarDados);
+    
+        // Carregar dados ao iniciar
+        carregarDados();
+    
+        // Preenchimento automático de campos relacionados
+        document.getElementById('paciente_uf').addEventListener('change', function() {
+            // Exemplo: Preencher código IBGE baseado no UF (simplificado)
+            const uf = this.value.toUpperCase();
+            const codigosIBGE = {
+                'RJ': '3304557',
+                'SP': '3550308',
+                'MG': '3106200'
+                // Adicione outros estados conforme necessário
+            };
+            
+            if (codigosIBGE[uf]) {
+                document.getElementById('paciente_munic_cod_ibge').value = codigosIBGE[uf];
+            }
+        });
+    
+        // Preenchimento automático de procedimentos
+        document.getElementById('procedimento_0_cod').addEventListener('change', function() {
+            const codigo = this.value;
+            const procedimentos = {
+                '123456': 'Ressonância Magnética de Crânio',
+                '654321': 'Tomografia Computadorizada de Tórax',
+                '789012': 'Ultrassonografia Abdominal'
+                // Adicione outros procedimentos conforme necessário
+            };
+            
+            if (procedimentos[codigo]) {
+                document.getElementById('procedimento_0_nome').value = procedimentos[codigo];
+            }
+        });
+    });
+    </script>

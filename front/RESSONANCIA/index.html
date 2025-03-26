@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário de Acesso - Ressonância Magnética</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h2>FORMULÁRIO DE ACESSO - RESSONÂNCIA MAGNÉTICA</h2>
+
+    <form id="form-ressonancia">
+      <!-- Contraindicações Absolutas -->
+      <div class="section">
+        <div class="section-header">1. CONTRAINDICAÇÕES ABSOLUTAS</div>
+        <div class="section-content">
+          <div class="form-row">
+            <div class="form-group">
+              <p>• Monitor de pressão intracraniana</p>
+              <p>• Neuroestimuladores (cerebral e espinhal)</p>
+              <p>• Cateter de Swan-Ganz e outros com eletrodos</p>
+              <p>• Clamp carotídeo do tipo Popen-Blayloc;</p>
+              <p>
+                • Clipes de aneurisma cerebral ferromagnéticos (antes de 1995
+                todos são)
+              </p>
+              <p>• Desfibrilador implantável</p>
+              <p>• Expansores mamários (McGhan, Infail etc.)</p>
+              <p>
+                • Fios metálicos de localização pré-cirúrgica mamária (não
+                compatíveis)
+              </p>
+              <p>• Fixadores ortopédicos externos metálicos não removíveis;</p>
+              <p>• Halos cranianos</p>
+              <p>• Bombas de infusão (inclusive implantáveis)*;</p>
+              <p>• Cápsula endoscópica</p>
+              <p>• Holter</p>
+              <p>• Implantes dentários magnéticos</p>
+              <p>• Marcapasso cardíaco</p>
+              <p>
+                • Suturas metálicas cutâneas (pacientes
+                anestesiados/rebaixados)
+              </p>
+              <p>
+                • Prótese coclear metálica, implantes otológicos/aparelhos não
+                removíveis+
+              </p>
+              <p>
+                • Próteses internas ortopédicas (paciente anestesiado ou
+                rebaixado).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contraindicações Relativas -->
+      <div class="section">
+        <div class="section-header">2. CONTRAINDICAÇÕES RELATIVAS</div>
+        <div class="section-content">
+          <div class="form-row">
+            <div class="form-group">
+              <p>• Patch transdérmico com material metálico (remover);/p>
+              <p>
+                • Claustrofobia (possível sedação, depende do tipo de
+                exame/tamanho do tubo)
+              </p>
+              <p>
+                • Clipes cirúrgicos metálicos (exceto de aneurisma cerebral)
+              </p>
+              <p>
+                • Clipes de aneurisma cerebral fracamente ferromagnéticos*
+                (checar data/modelo)
+              </p>
+              <p>
+                • Filtro de veia cava (aguardar 8 semanas se não
+                testado/seguro)
+              </p>
+              <p>• Gestante (evitar 1º trimestre; evitar gadolínio)</p>
+              <p>
+                • Sonda gastrointestinal com ponta metálica (remover se abdome
+                superior)
+              </p>
+              <p>
+                • Tatuagem ou maquiagem definitiva (compressa fria, atenção)
+              </p>
+              <p>
+                • Material de imobilização ortopédica (remover talas, gesso,
+                tração etc.)
+              </p>
+              <p>• Aparelhos auditivos (remover)</p>
+              <p>
+                • Cânula de traqueostomia metálica (trocar por cânula plástica)
+              </p>
+              <p>
+                • Molas de embolização (aguardar 8 semanas se não
+                testado/seguro)
+              </p>
+              <p>• Piercing (remover)</p>
+              <p>
+                • Projéteis/rastilhos metálicos (avaliar localização via RX)
+              </p>
+              <p>
+                • Válvulas de DVP de pressão ajustável (contatar neurocirurgião
+                p/ reajuste).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recomendações -->
+      <div class="section">
+        <div class="section-header">3. RECOMENDAÇÕES</div>
+        <div class="section-content">
+          <div class="form-row">
+            <div class="form-group">
+              <p>
+                • Este protocolo deve ser preenchido, datado e assinado pelo
+                médico assistente, com nome e CRM do mesmo.
+              </p>
+              <p>
+                • Descrever quadro clínico (anamnese, exame físico) que
+                justifique o pedido, anexar resultados de exames prévios,
+                justificar relevância e hipótese diagnóstica.
+              </p>
+              <p>
+                • Atentar ao Protocolo da unidade executante quanto ao valor de
+                Creatinina.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Identificação do Serviço Solicitante -->
+      <div class="section">
+        <div class="section-header">
+          4. IDENTIFICAÇÃO DO SERVIÇO SOLICITANTE
+        </div>
+        <div class="section-content">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="unidade_solicitante"
+                ><span class="field-number">4.1 -</span> UNIDADE
+                SOLICITANTE:</label
+              >
+              <input
+                type="text"
+                id="unidade_solicitante"
+                name="unidade_solicitante"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group-small">
+              <label for="telefone"
+                ><span class="field-number">4.2 -</span> TELEFONE:</label
+              >
+              <input type="text" id="telefone" name="telefone" required />
+            </div>
+            <div class="form-group-small">
+              <label for="nir"
+                ><span class="field-number">4.3 -</span> NIR (se houver):</label
+              >
+              <input type="text" id="nir" name="nir" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="medico_solicitante"
+                ><span class="field-number">4.4 -</span> MÉDICO
+                SOLICITANTE:</label
+              >
+              <input
+                type="text"
+                id="medico_solicitante"
+                name="medico_solicitante"
+                required
+              />
+            </div>
+            <div class="form-group-small">
+              <label for="crm"
+                ><span class="field-number">4.5 -</span> CRM:</label
+              >
+              <input type="text" id="crm" name="crm" required />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Identificação do Paciente -->
+      <div class="section">
+        <div class="section-header">5. IDENTIFICAÇÃO DO PACIENTE</div>
+        <div class="section-content">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nome_paciente"
+                ><span class="field-number">5.1 -</span> NOME:</label
+              >
+              <input
+                type="text"
+                id="paciente_nome"
+                name="paciente_nome"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group-small">
+              <label for="codigo_cross"
+                ><span class="field-number">5.2 -</span> PROTOCOLO:</label
+              >
+              <input
+                type="text"
+                id="paciente_codigo_cross"
+                name="paciente_codigo_cross"
+                required
+              />
+            </div>
+            <div class="form-group-small">
+              <label for="data_nascimento"
+                ><span class="field-number">5.3 -</span> DATA DE
+                NASCIMENTO:</label
+              >
+              <input
+                type="date"
+                id="paciente_dt_nasc"
+                name="paciente_dt_nasc"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group-small">
+              <label><span class="field-number">5.4 -</span> SEXO:</label>
+              <div>
+                <input
+                  type="radio"
+                  id="paciente_sexo_masc"
+                  name="paciente_sexo"
+                  value="Masculino"
+                  required
+                />
+                <label for="sexo_masc" style="display: inline">M</label>
+                <input
+                  type="radio"
+                  id="paciente_sexo_fem"
+                  name="paciente_sexo"
+                  value="Feminino"
+                  required
+                />
+                <label for="sexo_fem" style="display: inline">F</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group-small">
+              <label for="peso"
+                ><span class="field-number">5.5 -</span> PESO (máx 170
+                kg):</label
+              >
+              <input type="number" id="peso" name="peso" max="170" required />
+            </div>
+            <div class="form-group-small">
+              <label for="altura"
+                ><span class="field-number">5.6 -</span> ALTURA:</label
+              >
+              <input
+                type="number"
+                id="altura"
+                name="altura"
+                step="0.01"
+                required
+              />
+            </div>
+            <div class="form-group-small">
+              <label for="circunferencia_abdominal"
+                ><span class="field-number">5.7 -</span> CIRCUNFERÊNCIA
+                ABDOMINAL:</label
+              >
+              <input
+                type="number"
+                id="circunferencia_abdominal"
+                name="circunferencia_abdominal"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label
+                ><span class="field-number">5.8 -</span> CLASSIFICAÇÃO DE PRIORIDADE CLÍNICA:</label
+              >
+              <div>
+                <input
+                  type="radio"
+                  id="paciente_prioridade_clinica_1"
+                  name="paciente_prioridade_clinica"
+                  value="1"
+                  required
+                />
+                <label for="paciente_prioridade_clinica_1" style="display: inline">Prioridade 1: Muito urgente</label>
+                
+                <input
+                  type="radio"
+                  id="paciente_prioridade_clinica_2"
+                  name="paciente_prioridade_clinica"
+                  value="2"
+                  required
+                />
+                <label for="paciente_prioridade_clinica_2" style="display: inline">Prioridade 2: Alta urgência</label>
+                
+                <input
+                  type="radio"
+                  id="paciente_prioridade_clinica_3"
+                  name="paciente_prioridade_clinica"
+                  value="3"
+                  required
+                />
+                <label for="paciente_prioridade_clinica_3" style="display: inline">Prioridade 3: Moderada</label>
+                
+                <input
+                  type="radio"
+                  id="paciente_prioridade_clinica_4"
+                  name="paciente_prioridade_clinica"
+                  value="4"
+                  required
+                />
+                <label for="paciente_prioridade_clinica_4" style="display: inline">Prioridade 4: Baixa urgência</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group-small">
+              <label
+                ><span class="field-number">5.9 -</span> GESTAÇÃO OU PUERPÉRIO:</label
+              >
+              <div>
+                <input
+                  type="radio"
+                  id="paciente_gestacao_puerperio_sim"
+                  name="paciente_gestacao_puerperio"
+                  value="Sim"
+                  required
+                />
+                <label for="paciente_gestacao_puerperio_sim" style="display: inline">Sim</label>
+                
+                <input
+                  type="radio"
+                  id="paciente_gestacao_puerperio_nao"
+                  name="paciente_gestacao_puerperio"
+                  value="Não"
+                  required
+                />
+                <label for="paciente_gestacao_puerperio_nao" style="display: inline">Não</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group-small">
+              <label
+                ><span class="field-number">5.10 -</span> COMORBIDADES:</label
+              >
+              <div>
+                <input
+                  type="radio"
+                  id="paciente_comorbidades_0"
+                  name="paciente_comorbidades"
+                  value="0"
+                  required
+                />
+                <label for="paciente_comorbidades_0" style="display: inline">0</label>
+                
+                <input
+                  type="radio"
+                  id="paciente_comorbidades_1"
+                  name="paciente_comorbidades"
+                  value="1"
+                  required
+                />
+                <label for="paciente_comorbidades_1" style="display: inline">1</label>
+                
+                <input
+                  type="radio"
+                  id="paciente_comorbidades_2"
+                  name="paciente_comorbidades"
+                  value="2"
+                  required
+                />
+                <label for="paciente_comorbidades_2" style="display: inline">2</label>
+                
+                <input
+                  type="radio"
+                  id="paciente_comorbidades_3"
+                  name="paciente_comorbidades"
+                  value="3 ou mais"
+                  required
+                />
+                <label for="paciente_comorbidades_3" style="display: inline">3 ou mais</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group-small">
+              <label for="paciente_limitacao_funcional"
+                ><span class="field-number">5.11 -</span> LIMITAÇÃO FUNCIONAL:</label
+              >
+              <select id="paciente_limitacao_funcional" name="paciente_limitacao_funcional" required>
+                <option value="" disabled selected>Selecione</option>
+                <option value="Nenhuma">Nenhuma</option>
+                <option value="Leve">Leve</option>
+                <option value="Moderada">Moderada</option>
+                <option value="Severa">Severa</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group-small">
+              <label
+                ><span class="field-number">5.12 -</span> HISTÓRICO RECENTE DE INTERNAÇÃO/EMERGÊNCIA:</label
+              >
+              <div>
+                <input
+                  type="radio"
+                  id="paciente_historico_internacao_sim"
+                  name="paciente_historico_internacao"
+                  value="Sim"
+                  required
+                />
+                <label for="paciente_historico_internacao_sim" style="display: inline">Sim</label>
+                
+                <input
+                  type="radio"
+                  id="paciente_historico_internacao_nao"
+                  name="paciente_historico_internacao"
+                  value="Não"
+                  required
+                />
+                <label for="paciente_historico_internacao_nao" style="display: inline">Não</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exames de Imagem Já Realizados -->
+      <div class="section">
+        <div class="section-header">6. EXAMES DE IMAGEM JÁ REALIZADOS</div>
+        <div class="section-content">
+          <div class="form-row">
+            <div class="form-group">
+              <label
+                ><span class="field-number">6.1 -</span> Tipos de exame:</label
+              >
+              <div class="checklist">
+                <input type="checkbox" id="exame_raio_x" name="exame_raio_x" />
+                <label for="exame_raio_x">Raio X</label>
+
+                <input
+                  type="checkbox"
+                  id="exame_tomografia"
+                  name="exame_tomografia"
+                />
+                <label for="exame_tomografia">Tomografia</label>
+
+                <input type="checkbox" id="exame_usg" name="exame_usg" />
+                <label for="exame_usg">USG</label>
+
+                <input
+                  type="checkbox"
+                  id="exame_ressonancia"
+                  name="exame_ressonancia"
+                />
+                <label for="exame_ressonancia">Ressonância</label>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="form-row"
+            id="data_ressonancia_anterior_row"
+            style="display: none"
+          >
+            <div class="form-group-small">
+              <label for="data_ressonancia_anterior"
+                >Data da ressonância anterior:</label
+              >
+              <input
+                type="date"
+                id="data_ressonancia_anterior"
+                name="data_ressonancia_anterior"
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <div class="checklist">
+                <input
+                  type="checkbox"
+                  id="insuficiencia_exames"
+                  name="insuficiencia_exames"
+                />
+                <label for="insuficiencia_exames"
+                  >INSUFICIÊNCIA dos exames anteriores para solicitação de
+                  Ressonância?</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exame Solicitado -->
+      <div class="section">
+        <div class="section-header">7. EXAME SOLICITADO</div>
+        <div class="section-content">
+          <div class="form-row">
+            <div class="form-group-small">
+              <label
+                ><span class="field-number">7.1 -</span> LATERALIDADE:</label
+              >
+              <div>
+                <input
+                  type="radio"
+                  id="lateralidade_esquerda"
+                  name="lateralidade"
+                  value="Esquerda"
+                />
+                <label for="lateralidade_esquerda" style="display: inline"
+                  >Esquerda</label
+                >
+                <input
+                  type="radio"
+                  id="lateralidade_direita"
+                  name="lateralidade"
+                  value="Direita"
+                />
+                <label for="lateralidade_direita" style="display: inline"
+                  >Direita</label
+                >
+              </div>
+            </div>
+            <div class="form-group-small">
+              <label><span class="field-number">7.2 -</span> SEDAÇÃO:</label>
+              <div>
+                <input
+                  type="radio"
+                  id="sedacao_sim"
+                  name="sedacao"
+                  value="Sim"
+                />
+                <label for="sedacao_sim" style="display: inline">Sim</label>
+                <input
+                  type="radio"
+                  id="sedacao_nao"
+                  name="sedacao"
+                  value="Não"
+                />
+                <label for="sedacao_nao" style="display: inline">Não</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label
+                ><span class="field-number">7.3 -</span> Tipos de exame:</label
+              >
+              <div class="checklist">
+                <div>
+                  <input
+                    type="checkbox"
+                    id="exame_angiorressonancia"
+                    name="exame_angiorressonancia"
+                  />
+                  <label for="exame_angiorressonancia">Angiorressonância</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="exame_rm_sela_turcica"
+                    name="exame_rm_sela_turcica"
+                  />
+                  <label for="exame_rm_sela_turcica">RM Sela Túrcica</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="exame_rm_cranio"
+                    name="exame_rm_cranio"
+                  />
+                  <label for="exame_rm_cranio">RM Crânio</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="exame_rm_hipofise"
+                    name="exame_rm_hipofise"
+                  />
+                  <label for="exame_rm_hipofise">RM Hipófise</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="exame_rm_atm"
+                    name="exame_rm_atm"
+                  />
+                  <label for="exame_rm_atm">RM ATM</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="exame_rm_orbitas"
+                    name="exame_rm_orbitas"
+                  />
+                  <label for="exame_rm_orbitas">RM Órbitas</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="exame_rm_coracao"
+                    name="exame_rm_coracao"
+                  />
+                  <label for="exame_rm_coracao">RM Coração</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="exame_rm_coluna_toracica"
+                    name="exame_rm_coluna_toracica"
+                  />
+                  <label for="exame_rm_coluna_toracica"
+                    >RM Coluna Torácica</label
+                  >
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="exame_rm_coluna_cervical"
+                    name="exame_rm_coluna_cervical"
+                  />
+                  <label for="exame_rm_coluna_cervical"
+                    >RM Coluna Cervical</label
+                  >
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="exame_rm_lombo_sacra"
+                    name="exame_rm_lombo_sacra"
+                  />
+                  <label for="exame_rm_lombo_sacra">RM Lombo-Sacra</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="exame_rm_bacia"
+                    name="exame_rm_bacia"
+                  />
+                  <label for="exame_rm_bacia">RM Bacia</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="exame_rm_rins_vias_urinarias"
+                    name="exame_rm_rins_vias_urinarias"
+                  />
+                  <label for="exame_rm_rins_vias_urinarias"
+                    >RM Rins/Vias Urinárias</label
+                  >
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="exame_colangiorressonancia"
+                    name="exame_colangiorressonancia"
+                  />
+                  <label for="exame_colangiorressonancia"
+                    >Colangiorressonância</label
+                  >
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="exame_rm_abdome_superior"
+                    name="exame_rm_abdome_superior"
+                  />
+                  <label for="exame_rm_abdome_superior"
+                    >RM Abdome Superior</label
+                  >
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="exame_rm_abdome_inferior"
+                    name="exame_rm_abdome_inferior"
+                  />
+                  <label for="exame_rm_abdome_inferior"
+                    >RM Abdome Inferior</label
+                  >
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="exame_rm_pelve"
+                    name="exame_rm_pelve"
+                  />
+                  <label for="exame_rm_pelve">RM Pelve</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="exame_rm_membro_superior"
+                    name="exame_rm_membro_superior"
+                  />
+                  <label for="exame_rm_membro_superior"
+                    >RM Membro Superior</label
+                  >
+                  <input
+                    type="text"
+                    id="especificar_membro_superior"
+                    name="especificar_membro_superior"
+                    placeholder="Especificar"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="exame_rm_membro_inferior"
+                    name="exame_rm_membro_inferior"
+                  />
+                  <label for="exame_rm_membro_inferior"
+                    >RM Membro Inferior</label
+                  >
+                  <input
+                    type="text"
+                    id="especificar_membro_inferior"
+                    name="especificar_membro_inferior"
+                    placeholder="Especificar"
+                  />
+                </div>
+                <div>
+                  <input type="checkbox" id="exame_outro" name="exame_outro" />
+                  <label for="exame_outro">OUTRO:</label>
+                  <input
+                    type="text"
+                    id="especificar_outro"
+                    name="especificar_outro"
+                    placeholder="Especificar"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Justificativa do Exame Solicitado -->
+      <div class="section">
+        <div class="section-header">8. JUSTIFICATIVA DO EXAME SOLICITADO</div>
+        <div class="section-content">
+          <div class="form-row">
+            <div class="form-group">
+              <label><span class="field-number">8.1 -</span> CONDUTA:</label>
+              <div>
+                <input
+                  type="radio"
+                  id="conduta_diagnostica"
+                  name="conduta"
+                  value="Diagnóstica"
+                  required
+                />
+                <label for="conduta_diagnostica" style="display: inline"
+                  >Diagnóstica</label
+                >
+                <input
+                  type="radio"
+                  id="conduta_terapeutica"
+                  name="conduta"
+                  value="Terapêutica"
+                  required
+                />
+                <label for="conduta_terapeutica" style="display: inline"
+                  >Terapêutica</label
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label
+                ><span class="field-number">8.2 -</span> Tipo de
+                condição:</label
+              >
+              <div class="checklist">
+                <input
+                  type="checkbox"
+                  id="paciente_condicao_lesao_tumor"
+                  name="paciente_condicao_lesao_tumor"
+                />
+                <label for="condicao_lesao_tumor">Lesão Tumor</label>
+
+                <input
+                  type="checkbox"
+                  id="paciente_condicao_pre_cirurgico"
+                  name="paciente_condicao_pre_cirurgico"
+                />
+                <label for="condicao_pre_cirurgico">Pré-Cirúrgico</label>
+
+                <input
+                  type="checkbox"
+                  id="paciente_condicao_pos_cirurgico"
+                  name="paciente_condicao_pos_cirurgico"
+                />
+                <label for="condicao_pos_cirurgico">Pós-Cirúrgico</label>
+
+                <input
+                  type="checkbox"
+                  id="paciente_condicao_doenca_vascular"
+                  name="paciente_condicao_doenca_vascular"
+                />
+                <label for="condicao_doenca_vascular">Doença Vascular</label>
+
+                <input
+                  type="checkbox"
+                  id="paciente_condicao_doenca_aorta_vasos"
+                  name="paciente_condicao_doenca_aorta_vasos"
+                />
+                <label for="condicao_doenca_aorta_vasos"
+                  >Doença Aorta/Vasos</label
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="descricao_diagnostico"
+                ><span class="field-number">8.3 -</span> Descrição do
+                Diagnóstico:</label
+              >
+              <textarea
+                id="descricao_diagnostico"
+                name="descricao_diagnostico"
+                rows="3"
+                required
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group-small">
+              <label for="cid_principal"
+                ><span class="field-number">8.4 -</span> CID Principal:</label
+              >
+              <input
+                type="text"
+                id="cid_principal"
+                name="cid_principal"
+                required
+              />
+            </div>
+            <div class="form-group-small">
+              <label for="cid_secundario"
+                ><span class="field-number">8.5 -</span> CID Secundário:</label
+              >
+              <input type="text" id="cid_secundario" name="cid_secundario" />
+            </div>
+            <div class="form-group-small">
+              <label for="cid_causas_associadas"
+                ><span class="field-number">8.6 -</span> CID Causas
+                Associadas:</label
+              >
+              <input
+                type="text"
+                id="cid_causas_associadas"
+                name="cid_causas_associadas"
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group-small">
+              <label for="data"
+                ><span class="field-number">8.7 -</span> Data:</label
+              >
+              <input type="date" id="data" name="data" required />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("form-ressonancia");
+        const exameRessonancia = document.getElementById("exame_ressonancia");
+        const dataRessonanciaRow = document.getElementById(
+          "data_ressonancia_anterior_row"
+        );
+
+        // Mostrar/ocultar campo de data da ressonância anterior
+        exameRessonancia.addEventListener("change", function () {
+          if (this.checked) {
+            dataRessonanciaRow.style.display = "block";
+          } else {
+            dataRessonanciaRow.style.display = "none";
+          }
+        });
+
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const formData = new FormData(form);
+          const data = {};
+          formData.forEach((value, key) => {
+            data[key] = value;
+          });
+
+          fetch("http://localhost:3000/register/ressonancia", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          })
+            .then((response) => response.json())
+            .then((responseData) => {
+              console.log("Resposta da API:", responseData);
+            })
+            .catch((error) => {
+              console.error("Erro ao enviar os dados:", error);
+            });
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<script>
+  // Função principal de autopreenchimento
+  function autoPreencherFormulario() {
+    // Seção 4 - Identificação do Serviço Solicitante
+    document.getElementById("unidade_solicitante").value =
+      "PSF VIDA E SAUDE";
+    document.getElementById("telefone").value = "(33) 3511-1649"; 
+    document.getElementById("medico_solicitante").value = "Dr. Paulo Neves";
+    
+  }
+  autoPreencherFormulario();
+</script>

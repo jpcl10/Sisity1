@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Requisição de Mamografia - SUS</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<body>
+    <h2><i class="fas fa-file-medical"></i> REQUISIÇÃO DE MAMOGRAFIA - SISTEMA ÚNICO DE SAÚDE (SUS)</h2>
+
+    <form id="form-mamografia">
+        <!-- 1. INFORMAÇÕES PESSOAIS -->
+        <div class="section">
+            <div class="section-header"><i class="fas fa-user"></i> 1. INFORMAÇÕES PESSOAIS</div>
+            <div class="section-content">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nome_paciente"><span class="field-number">1.1 -</span> NOME COMPLETO DO(A) PACIENTE:</label>
+                        <input type="text" id="nome_paciente" name="nome_paciente" required />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nome_mae"><span class="field-number">1.2 -</span> NOME COMPLETO DA MÃE:</label>
+                        <input type="text" id="nome_mae" name="nome_mae" required />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group-small">
+                        <label for="data_nascimento"><span class="field-number">1.3 -</span> DATA DE NASCIMENTO:</label>
+                        <input type="date" id="data_nascimento" name="data_nascimento" required />
+                    </div>
+                    <div class="form-group-small">
+                        <label for="idade"><span class="field-number">1.4 -</span> IDADE:</label>
+                        <input type="number" id="idade" name="idade" required />
+                    </div>
+                    <div class="form-group-small">
+                        <label><span class="field-number">1.5 -</span> SEXO:</label>
+                        <div>
+                            <input type="radio" id="sexo_m" name="sexo" value="Masculino" required />
+                            <label for="sexo_m" style="display: inline">M</label>
+                            <input type="radio" id="sexo_f" name="sexo" value="Feminino" required />
+                            <label for="sexo_f" style="display: inline">F</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="cartao_sus"><span class="field-number">1.6 -</span> CARTÃO SUS (CNS):</label>
+                        <input type="text" id="cartao_sus" name="cartao_sus" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="cpf"><span class="field-number">1.7 -</span> CPF:</label>
+                        <input type="text" id="cpf" name="cpf" />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><span class="field-number">1.8 -</span> RAÇA/COR:</label>
+                        <div class="checklist">
+                            <input type="radio" id="raca_branca" name="raca" value="Branca" required />
+                            <label for="raca_branca">Branca</label>
+                            <input type="radio" id="raca_preta" name="raca" value="Preta" />
+                            <label for="raca_preta">Preta</label>
+                            <input type="radio" id="raca_parda" name="raca" value="Parda" />
+                            <label for="raca_parda">Parda</label>
+                            <input type="radio" id="raca_amarela" name="raca" value="Amarela" />
+                            <label for="raca_amarela">Amarela</label>
+                            <input type="radio" id="raca_indigena" name="raca" value="Indígena" />
+                            <label for="raca_indigena">Indígena</label>
+                            <input type="radio" id="raca_nao_sabe" name="raca" value="Não sabe" />
+                            <label for="raca_nao_sabe">Não sabe</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nacionalidade"><span class="field-number">1.9 -</span> NACIONALIDADE:</label>
+                        <input type="text" id="nacionalidade" name="nacionalidade" required />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. DADOS RESIDENCIAIS -->
+        <div class="section">
+            <div class="section-header"><i class="fas fa-home"></i> 2. DADOS RESIDENCIAIS</div>
+            <div class="section-content">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="endereco"><span class="field-number">2.1 -</span> ENDEREÇO (RUA, Nº, COMPL.):</label>
+                        <input type="text" id="endereco" name="endereco" required />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group-small">
+                        <label for="bairro"><span class="field-number">2.2 -</span> BAIRRO:</label>
+                        <input type="text" id="bairro" name="bairro" required />
+                    </div>
+                    <div class="form-group-small">
+                        <label for="cep"><span class="field-number">2.3 -</span> CEP:</label>
+                        <input type="text" id="cep" name="cep" required />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group-small">
+                        <label for="municipio"><span class="field-number">2.4 -</span> MUNICÍPIO DE RESIDÊNCIA:</label>
+                        <input type="text" id="municipio" name="municipio" required />
+                    </div>
+                    <div class="form-group-small">
+                        <label for="uf"><span class="field-number">2.5 -</span> UF:</label>
+                        <input type="text" id="uf" name="uf" maxlength="2" required />
+                    </div>
+                    <div class="form-group-small">
+                        <label for="cod_municipio"><span class="field-number">2.6 -</span> CÓD. MUN.:</label>
+                        <input type="text" id="cod_municipio" name="cod_municipio" />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="ponto_referencia"><span class="field-number">2.7 -</span> PONTOS DE REFERÊNCIA:</label>
+                        <input type="text" id="ponto_referencia" name="ponto_referencia" />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group-small">
+                        <label for="ddd"><span class="field-number">2.8 -</span> TELEFONE (DDD):</label>
+                        <input type="text" id="ddd" name="ddd" maxlength="2" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone"><span class="field-number">2.9 -</span> NÚMERO:</label>
+                        <input type="text" id="telefone" name="telefone" required />
+                    </div>
+                </div>
+
+                <!-- Campos para Cálculo de Score -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><span class="field-number">2.10 -</span> CLASSIFICAÇÃO DE PRIORIDADE CLÍNICA</label>
+                        <div class="checklist">
+                            <input type="radio" id="paciente_prioridade_clinica_1" name="paciente_prioridade_clinica" value="1" required />
+                            <label for="paciente_prioridade_clinica_1">Prioridade 1: Muito urgente</label>
+                            <input type="radio" id="paciente_prioridade_clinica_2" name="paciente_prioridade_clinica" value="2" />
+                            <label for="paciente_prioridade_clinica_2">Prioridade 2: Alta urgência</label>
+                            <input type="radio" id="paciente_prioridade_clinica_3" name="paciente_prioridade_clinica" value="3" />
+                            <label for="paciente_prioridade_clinica_3">Prioridade 3: Moderada</label>
+                            <input type="radio" id="paciente_prioridade_clinica_4" name="paciente_prioridade_clinica" value="4" />
+                            <label for="paciente_prioridade_clinica_4">Prioridade 4: Baixa urgência</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><span class="field-number">2.11 -</span> GESTAÇÃO OU PUERPÉRIO</label>
+                        <div class="checklist">
+                            <input type="radio" id="paciente_gestacao_puerperio_sim" name="paciente_gestacao_puerperio" value="Sim" required />
+                            <label for="paciente_gestacao_puerperio_sim">Sim</label>
+                            <input type="radio" id="paciente_gestacao_puerperio_nao" name="paciente_gestacao_puerperio" value="Não" />
+                            <label for="paciente_gestacao_puerperio_nao">Não</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><span class="field-number">2.12 -</span> COMORBIDADES</label>
+                        <div class="checklist">
+                            <input type="radio" id="paciente_comorbidades_0" name="paciente_comorbidades" value="0" required />
+                            <label for="paciente_comorbidades_0">0</label>
+                            <input type="radio" id="paciente_comorbidades_1" name="paciente_comorbidades" value="1" />
+                            <label for="paciente_comorbidades_1">1</label>
+                            <input type="radio" id="paciente_comorbidades_2" name="paciente_comorbidades" value="2" />
+                            <label for="paciente_comorbidades_2">2</label>
+                            <input type="radio" id="paciente_comorbidades_3" name="paciente_comorbidades" value="3 ou mais" />
+                            <label for="paciente_comorbidades_3">3 ou mais</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><span class="field-number">2.13 -</span> LIMITAÇÃO FUNCIONAL</label>
+                        <select id="paciente_limitacao_funcional" name="paciente_limitacao_funcional" required>
+                            <option value="">Selecione</option>
+                            <option value="Nenhuma">Nenhuma</option>
+                            <option value="Leve">Leve</option>
+                            <option value="Moderada">Moderada</option>
+                            <option value="Severa">Severa</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><span class="field-number">2.14 -</span> HISTÓRICO RECENTE DE INTERNAÇÃO/EMERGÊNCIA</label>
+                        <div class="checklist">
+                            <input type="radio" id="paciente_historico_internacao_sim" name="paciente_historico_internacao" value="Sim" required />
+                            <label for="paciente_historico_internacao_sim">Sim</label>
+                            <input type="radio" id="paciente_historico_internacao_nao" name="paciente_historico_internacao" value="Não" />
+                            <label for="paciente_historico_internacao_nao">Não</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. HISTÓRICO / ANAMNESE -->
+        <div class="section">
+            <div class="section-header"><i class="fas fa-clipboard-list"></i> 3. HISTÓRICO / ANAMNESE</div>
+            <div class="section-content">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><span class="field-number">3.1 -</span> TEM NÓDULO OU CAROÇO NA MAMA?</label>
+                        <div class="checklist">
+                            <input type="radio" id="nodulo_sim_d" name="nodulo" value="Sim, mama direita" />
+                            <label for="nodulo_sim_d">SIM, MAMA DIREITA</label>
+                            <input type="radio" id="nodulo_sim_e" name="nodulo" value="Sim, mama esquerda" />
+                            <label for="nodulo_sim_e">SIM, MAMA ESQUERDA</label>
+                            <input type="radio" id="nodulo_nao" name="nodulo" value="Não" />
+                            <label for="nodulo_nao">NÃO</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><span class="field-number">3.2 -</span> APRESENTA RISCO ELEVADO* PARA CÂNCER DE MAMA?</label>
+                        <div class="checklist">
+                            <input type="radio" id="risco_sim" name="risco" value="Sim" />
+                            <label for="risco_sim">SIM</label>
+                            <input type="radio" id="risco_nao" name="risco" value="Não" />
+                            <label for="risco_nao">NÃO</label>
+                            <input type="radio" id="risco_nao_sabe" name="risco" value="Não sabe" />
+                            <label for="risco_nao_sabe">NÃO SABE</label>
+                        </div>
+                        <p class="note">* RISCO ELEVADO INCLUI: histórico familiar de câncer de mama em <50 anos, câncer de mama bilateral, câncer de ovário em qualquer idade, etc.</p>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><span class="field-number">3.3 -</span> ANTES DESTA CONSULTA, TEVE SUAS MAMAS EXAMINADAS POR PROFISSIONAL DE SAÚDE?</label>
+                        <div class="checklist">
+                            <input type="radio" id="exame_nunca" name="exame_profissional" value="Nunca foram examinadas" />
+                            <label for="exame_nunca">NUNCA FORAM EXAMINADAS</label>
+                            <input type="radio" id="exame_sim" name="exame_profissional" value="Sim" />
+                            <label for="exame_sim">SIM</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><span class="field-number">3.4 -</span> FEZ MAMOGRAFIA ALGUMA VEZ?</label>
+                        <div class="checklist">
+                            <input type="radio" id="mamografia_sim" name="mamografia" value="Sim" />
+                            <label for="mamografia_sim">SIM, última em</label>
+                            <input type="date" id="data_ultima_mamografia" name="data_ultima_mamografia" style="width: auto; display: inline-block;" />
+                            <input type="radio" id="mamografia_nao" name="mamografia" value="Não" />
+                            <label for="mamografia_nao">NÃO</label>
+                            <input type="radio" id="mamografia_nao_sabe" name="mamografia" value="Não sabe" />
+                            <label for="mamografia_nao_sabe">NÃO SABE</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><span class="field-number">3.5 -</span> FEZ RADIOTERAPIA NA MAMA OU NO PLASTRÃO? EM QUE ANO?</label>
+                        <div class="checklist">
+                            <input type="radio" id="radioterapia_sim_d" name="radioterapia" value="Sim, mama direita" />
+                            <label for="radioterapia_sim_d">SIM, MAMA DIREITA</label>
+                            <input type="radio" id="radioterapia_sim_e" name="radioterapia" value="Sim, mama esquerda" />
+                            <label for="radioterapia_sim_e">SIM, MAMA ESQUERDA</label>
+                            <input type="radio" id="radioterapia_nao" name="radioterapia" value="Não" />
+                            <label for="radioterapia_nao">NÃO</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="cirurgia_ano"><span class="field-number">3.6 -</span> FEZ CIRURGIA DE MAMA? EM QUE ANO?</label>
+                        <input type="text" id="cirurgia_ano" name="cirurgia_ano" />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><span class="field-number">3.7 -</span> TIPO(S) DE CIRURGIA (ASSINALE):</label>
+                        <div class="checklist">
+                            <div>
+                                <input type="checkbox" id="cirurgia_biopsia_incisional" name="cirurgia_biopsia_incisional" />
+                                <label for="cirurgia_biopsia_incisional">Biópsia cirúrgica incisional</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="cirurgia_biopsia_excisional" name="cirurgia_biopsia_excisional" />
+                                <label for="cirurgia_biopsia_excisional">Biópsia cirúrgica excisional</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="cirurgia_centralectomia" name="cirurgia_centralectomia" />
+                                <label for="cirurgia_centralectomia">Centralectomia</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="cirurgia_segmentectomia" name="cirurgia_segmentectomia" />
+                                <label for="cirurgia_segmentectomia">Segmentectomia</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="cirurgia_dutectomia" name="cirurgia_dutectomia" />
+                                <label for="cirurgia_dutectomia">Dutectomia</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="cirurgia_mastectomia" name="cirurgia_mastectomia" />
+                                <label for="cirurgia_mastectomia">Mastectomia</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="cirurgia_mastectomia_poupadora" name="cirurgia_mastectomia_poupadora" />
+                                <label for="cirurgia_mastectomia_poupadora">Mastectomia poupadora de pele</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="cirurgia_reconstrucao" name="cirurgia_reconstrucao" />
+                                <label for="cirurgia_reconstrucao">Reconstrução mamária</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="cirurgia_linfadenectomia" name="cirurgia_linfadenectomia" />
+                                <label for="cirurgia_linfadenectomia">Linfadenectomia axilar</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="cirurgia_linfonodo_sentinela" name="cirurgia_linfonodo_sentinela" />
+                                <label for="cirurgia_linfonodo_sentinela">Biópsia de linfonodo sentinela</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="cirurgia_implantes" name="cirurgia_implantes" />
+                                <label for="cirurgia_implantes">Inclusão de implantes</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="cirurgia_nao" name="cirurgia_nao" />
+                                <label for="cirurgia_nao">Não fez cirurgia</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="cirurgia_mastoplastia" name="cirurgia_mastoplastia" />
+                                <label for="cirurgia_mastoplastia">Mastoplastia redutora</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. MOTIVO DA MAMOGRAFIA -->
+        <div class="section">
+            <div class="section-header"><i class="fas fa-search"></i> 4. MOTIVO DA MAMOGRAFIA</div>
+            <div class="section-content">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><span class="field-number">4.1 -</span> MAMOGRAFIA DIAGNÓSTICA (para mulheres com sinais/sintomas ou controle):</label>
+                        <div class="checklist">
+                            <div>
+                                <input type="checkbox" id="motivo_achados_exame" name="motivo_achados_exame" />
+                                <label for="motivo_achados_exame">Achados no Exame Clínico (ex.: lesão papilar, descarga papilar, nódulo, espessamento, linfonodo axilar/supraclavicular)</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="motivo_controle_radiologico" name="motivo_controle_radiologico" />
+                                <label for="motivo_controle_radiologico">Controle Radiológico de Lesão (BI-RADS categoria 3)</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="motivo_lesao_cancer" name="motivo_lesao_cancer" />
+                                <label for="motivo_lesao_cancer">Lesão com Diagnóstico de Câncer (antes de iniciar tratamento)</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="motivo_avaliacao_qt" name="motivo_avaliacao_qt" />
+                                <label for="motivo_avaliacao_qt">Avaliação de Resposta à QT Neoadjuvante</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="motivo_revisao_mamografia" name="motivo_revisao_mamografia" />
+                                <label for="motivo_revisao_mamografia">Revisão de Mamografia (lesão vista em outra instituição)</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="motivo_controle_pos_biopsia" name="motivo_controle_pos_biopsia" />
+                                <label for="motivo_controle_pos_biopsia">Controle de Lesão após Biópsia ou PAAF com Resultado Benigno</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><span class="field-number">4.2 -</span> MAMOGRAFIA DE RASTREAMENTO (mulheres assintomáticas):</label>
+                        <div class="checklist">
+                            <div>
+                                <input type="checkbox" id="rastreamento_populacao_alvo" name="rastreamento_populacao_alvo" />
+                                <label for="rastreamento_populacao_alvo">População-Alvo (50-69 anos)</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="rastreamento_risco_elevado" name="rastreamento_risco_elevado" />
+                                <label for="rastreamento_risco_elevado">População de Risco Elevado (história familiar)</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="rastreamento_paciente_tratada" name="rastreamento_paciente_tratada" />
+                                <label for="rastreamento_paciente_tratada">Paciente Já Tratada de Câncer de Mama</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. ACHADOS CLÍNICOS / IMAGEM -->
+        <div class="section">
+            <div class="section-header"><i class="fas fa-x-ray"></i> 5. ACHADOS CLÍNICOS / IMAGEM</div>
+            <div class="section-content">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><span class="field-number">5.1 -</span> MAMA DIREITA:</label>
+                        <div class="checklist">
+                            <input type="checkbox" id="mama_d_nodulo" name="mama_d_nodulo" />
+                            <label for="mama_d_nodulo">Nódulo</label>
+                            <input type="checkbox" id="mama_d_microcalcificacao" name="mama_d_microcalcificacao" />
+                            <label for="mama_d_microcalcificacao">Microcalcificação</label>
+                            <input type="checkbox" id="mama_d_area_densa" name="mama_d_area_densa" />
+                            <label for="mama_d_area_densa">Área densa</label>
+                            <input type="checkbox" id="mama_d_assimetria" name="mama_d_assimetria" />
+                            <label for="mama_d_assimetria">Assimetria</label>
+                            <input type="checkbox" id="mama_d_distorcao" name="mama_d_distorcao" />
+                            <label for="mama_d_distorcao">Distorção focal</label>
+                            <input type="checkbox" id="mama_d_linfonodo" name="mama_d_linfonodo" />
+                            <label for="mama_d_linfonodo">Linfonodo axilar</label>
+                            <input type="checkbox" id="mama_d_espessamento" name="mama_d_espessamento" />
+                            <label for="mama_d_espessamento">Espessamento</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><span class="field-number">5.2 -</span> MAMA ESQUERDA:</label>
+                        <div class="checklist">
+                            <input type="checkbox" id="mama_e_nodulo" name="mama_e_nodulo" />
+                            <label for="mama_e_nodulo">Nódulo</label>
+                            <input type="checkbox" id="mama_e_microcalcificacao" name="mama_e_microcalcificacao" />
+                            <label for="mama_e_microcalcificacao">Microcalcificação</label>
+                            <input type="checkbox" id="mama_e_area_densa" name="mama_e_area_densa" />
+                            <label for="mama_e_area_densa">Área densa</label>
+                            <input type="checkbox" id="mama_e_assimetria" name="mama_e_assimetria" />
+                            <label for="mama_e_assimetria">Assimetria</label>
+                            <input type="checkbox" id="mama_e_distorcao" name="mama_e_distorcao" />
+                            <label for="mama_e_distorcao">Distorção focal</label>
+                            <input type="checkbox" id="mama_e_linfonodo" name="mama_e_linfonodo" />
+                            <label for="mama_e_linfonodo">Linfonodo axilar</label>
+                            <input type="checkbox" id="mama_e_espessamento" name="mama_e_espessamento" />
+                            <label for="mama_e_espessamento">Espessamento</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><span class="field-number">5.3 -</span> LOCALIZAÇÃO:</label>
+                        <div class="checklist">
+                            <input type="checkbox" id="local_qsl" name="local_qsl" />
+                            <label for="local_qsl">QSL</label>
+                            <input type="checkbox" id="local_qil" name="local_qil" />
+                            <label for="local_qil">QIL</label>
+                            <input type="checkbox" id="local_qsm" name="local_qsm" />
+                            <label for="local_qsm">QSM</label>
+                            <input type="checkbox" id="local_qim" name="local_qim" />
+                            <label for="local_qim">QIM</label>
+                            <input type="checkbox" id="local_uqsup" name="local_uqsup" />
+                            <label for="local_uqsup">UQsup</label>
+                            <input type="checkbox" id="local_uqlat" name="local_uqlat" />
+                            <label for="local_uqlat">UQlat</label>
+                            <input type="checkbox" id="local_uqmed" name="local_uqmed" />
+                            <label for="local_uqmed">UQmed</label>
+                            <input type="checkbox" id="local_uqinf" name="local_uqinf" />
+                            <label for="local_uqinf">UQinf</label>
+                            <input type="checkbox" id="local_rra" name="local_rra" />
+                            <label for="local_rra">RRA</label>
+                            <input type="checkbox" id="local_pa" name="local_pa" />
+                            <label for="local_pa">PA</label>
+                            <input type="checkbox" id="local_rc" name="local_rc" />
+                            <label for="local_rc">RC</label>
+                            <input type="checkbox" id="local_axilar" name="local_axilar" />
+                            <label for="local_axilar">Axilar</label>
+                            <input type="checkbox" id="local_supraclavicular" name="local_supraclavicular" />
+                            <label for="local_supraclavicular">Supraclavicular</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. SOLICITAÇÃO E IDENTIFICAÇÃO DO SERVIÇO -->
+        <div class="section">
+            <div class="section-header"><i class="fas fa-hospital"></i> 6. SOLICITAÇÃO E IDENTIFICAÇÃO DO SERVIÇO</div>
+            <div class="section-content">
+                <div class="form-row">
+                    <div class="form-group-small">
+                        <label for="cnes"><span class="field-number">6.1 -</span> CNES DA UNIDADE DE SAÚDE:</label>
+                        <input type="text" id="cnes" name="cnes" required />
+                    </div>
+                    <div class="form-group-small">
+                        <label for="cod_mun_solicitante"><span class="field-number">6.2 -</span> CÓD. MUN.:</label>
+                        <input type="text" id="cod_mun_solicitante" name="cod_mun_solicitante" />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="unidade_saude"><span class="field-number">6.3 -</span> UNIDADE DE SAÚDE (NOME):</label>
+                        <input type="text" id="unidade_saude" name="unidade_saude" required />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="protocolo_siscan"><span class="field-number">6.4 -</span> NÚMERO DO PROTOCOLO (SISCAN):</label>
+                        <input type="text" id="protocolo_siscan" name="protocolo_siscan" />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group-small">
+                        <label for="data_solicitacao"><span class="field-number">6.5 -</span> DATA DA SOLICITAÇÃO:</label>
+                        <input type="date" id="data_solicitacao" name="data_solicitacao" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="responsavel"><span class="field-number">6.6 -</span> RESPONSÁVEL:</label>
+                        <input type="text" id="responsavel" name="responsavel" required />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="numero_exame"><span class="field-number">6.7 -</span> NÚMERO DO EXAME (preenchido pelo serviço de mamografia):</label>
+                        <input type="text" id="numero_exame" name="numero_exame" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" id="submit-btn"><i class="fas fa-paper-plane"></i> Enviar Requisição</button>
+        <div id="loading" class="loading-indicator" style="display: none;">
+            <i class="fas fa-spinner fa-spin"></i> Processando...
+        </div>
+    </form>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("form-mamografia");
+        const submitBtn = document.getElementById("submit-btn");
+        const loading = document.getElementById("loading");
+        const dataNascimento = document.getElementById("data_nascimento");
+        const idade = document.getElementById("idade");
+
+        // Calcular idade automaticamente com base na data de nascimento
+        dataNascimento.addEventListener("change", function() {
+          if (this.value) {
+            const birthDate = new Date(this.value);
+            const today = new Date();
+            let calculatedAge = today.getFullYear() - birthDate.getFullYear();
+            const m = today.getMonth() - birthDate.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+              calculatedAge--;
+            }
+            idade.value = calculatedAge;
+          }
+        });
+
+        // Máscara para CPF
+        const cpf = document.getElementById("cpf");
+        cpf.addEventListener("input", function() {
+          let value = this.value.replace(/\D/g, "");
+          if (value.length > 11) value = value.slice(0, 11);
+          
+          if (value.length > 9) {
+            this.value = value.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})$/, "$1.$2.$3-$4");
+          } else if (value.length > 6) {
+            this.value = value.replace(/^(\d{3})(\d{3})(\d{0,3})/, "$1.$2.$3");
+          } else if (value.length > 3) {
+            this.value = value.replace(/^(\d{3})(\d{0,3})/, "$1.$2");
+          } else {
+            this.value = value;
+          }
+        });
+
+        // Máscara para CEP
+        const cep = document.getElementById("cep");
+        cep.addEventListener("input", function() {
+          let value = this.value.replace(/\D/g, "");
+          if (value.length > 8) value = value.slice(0, 8);
+          
+          if (value.length > 5) {
+            this.value = value.replace(/^(\d{5})(\d{0,3})/, "$1-$2");
+          } else {
+            this.value = value;
+          }
+        });
+
+        // Envio do formulário
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+          
+          // Mostrar indicador de carregamento
+          submitBtn.disabled = true;
+          loading.style.display = "block";
+
+          const formData = new FormData(form);
+          const data = {};
+          formData.forEach((value, key) => {
+            data[key] = value;
+          });
+
+          fetch("http://localhost:3000/register/mamografia", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          })
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error("Erro na resposta do servidor");
+              }
+              return response.json();
+            })
+            .then((responseData) => {
+              console.log("Resposta da API:", responseData);
+              alert("Requisição enviada com sucesso!");
+              form.reset();
+            })
+            .catch((error) => {
+              console.error("Erro ao enviar os dados:", error);
+              alert("Erro ao enviar os dados. Por favor, tente novamente.");
+            })
+            .finally(() => {
+              // Esconder indicador de carregamento
+              submitBtn.disabled = false;
+              loading.style.display = "none";
+            });
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<script>
+    // Função principal de autopreenchimento
+    function autoPreencherFormulario() {
+      // Seção 4 - Identificação do Serviço Solicitante
+      document.getElementById("unidade_saude").value =
+        "PSF VIDA E SAUDE";
+      document.getElementById("cnes").value = "2209802"; 
+      document.getElementById("cod_mun_solicitante").value = "3132701";
+    }
+    autoPreencherFormulario();
+    </script>
